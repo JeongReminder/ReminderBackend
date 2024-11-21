@@ -81,6 +81,7 @@ public class AcceptMemberImplService implements AcceptMemberService{
             // 같은 카테고리에 있는 다른 모집 글의 모든 수락된 멤버의 지원글 삭제
             deleteAcceptedApplicationsFromOtherRecruitments(recruitment.getRecruitmentCategory(), acceptMember.getId());
 
+            return AcceptMemberResponseDTO.toResponseDTO(saveAcceptMember, acceptMember.getMemberProfile());
         } else if (!accept) {
             teamApplication.setApplicationStatus(ApplicationStatus.REJECTED);
             teamApplicationRepository.save(teamApplication);
@@ -89,7 +90,7 @@ public class AcceptMemberImplService implements AcceptMemberService{
             throw new IllegalArgumentException("모집글이 마감되었습니다.");
         }
 
-        return AcceptMemberResponseDTO.toResponseDTO(saveAcceptMember, acceptMember.getMemberProfile());
+        return null;
     }
 
     private void deleteAcceptedApplicationsFromOtherRecruitments(String category, Long memberId) {
