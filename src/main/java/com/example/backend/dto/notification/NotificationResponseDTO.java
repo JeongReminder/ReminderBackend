@@ -25,7 +25,7 @@ public class NotificationResponseDTO {
 
     public static NotificationResponseDTO toResponseDTO(NotificationMessage notificationMessage) {
         return NotificationResponseDTO.builder()
-                .id(notificationMessage.getId())
+                .id(notificationMessage.getId() != null ? notificationMessage.getId() : null)
                 .title(notificationMessage.getTitle())
                 .content(notificationMessage.getContent())
                 .category(notificationMessage.getCategory())

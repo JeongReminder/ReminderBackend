@@ -7,8 +7,6 @@ import com.example.backend.dto.announcement.AnnouncementCategory;
 import com.example.backend.dto.announcement.AnnouncementResponseDTO;
 import com.example.backend.model.entity.notification.NotificationMessage;
 import com.example.backend.service.announcment.AnnouncementService;
-import com.example.backend.service.announcment.FileService;
-import com.example.backend.service.announcment.ImageService;
 import com.example.backend.service.notification.FCM.FCMService;
 import com.example.backend.service.notification.NotificationService;
 import lombok.RequiredArgsConstructor;
